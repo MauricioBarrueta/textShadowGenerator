@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Kanit', sans-serif, FontAwesome;
+}
+
+/* Color Palette */
+$redCrayola: #ED254E;
+$naplesYellow: #F9DC5C;
+$teaGreen: #C2EABD;
+$oxfordBlue: #011936;
+$Charcoal: #465362;
+
+body {
+    background-color: $oxfordBlue;
+    .navMenu {
+        text-align: center;
+        padding: 0.5rem;     
+        .active { color: #ED254E; text-shadow: 0px 0px 8px rgba(237, 37, 78, 1); }       
+        a {
+            color: white;
+            font-size: 16px; text-decoration: none; text-transform: uppercase;  
+            padding: 0 1em; border-right: 2px dotted $redCrayola;         
+            transition: all 0.2s ease-in-out;
+            &:last-child { border-right: 0; }
+            &:hover { color: $redCrayola; }
+        }
+    }
+
+    .container, .shadow-properties, .shadow-preview { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+    span { cursor: default; }
+
+    .container {        
+        min-height: 90vh; gap: 25px;
+
+        .card-container, .shadow-result { 
+            width: auto; max-width: 500px; height: auto; min-height: 350px;
+            padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
+            background-color: $teaGreen; text-align: center;  
+
+            .title {
+                font-size: 15px; font-weight: bold;
+                color: $oxfordBlue; user-select: none;
+            }
+
+            .shadow-properties { 
+                flex-direction: row; flex-wrap: nowrap;
+                margin: 5px 0;               
+                .column {
+                    width: 50%; height: auto;
+                    padding: 5px; border: 2px solid $oxfordBlue;
+                    background-color: $redCrayola; color: white; 
+                    &:first-child { border-radius: 5px 0 0 5px; border-right: 2px dotted $oxfordBlue; }
+                    &:last-child { border-radius: 0 5px 5px 0; border-left: 0; }
+
+                    .input-group { 
+                        justify-content: center; margin-bottom: 5px; 
+                        label {                       
+                            width: 100%; height: 25px; display: inline-block;
+                            font-size: 15px; margin-bottom: 0;
+                        }   
+                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+                            -webkit-appearance: none; margin: 0;
+                        }
+                        input[type = number] {
+                            width: 25px; height: 25px;
+                            appearance: none; -moz-appearance: textfield;
+                            text-align: center; font-size: 8.5px;
+                            border: 0; margin: 0 !important; border-radius: 5px !important;
+                        }        
+                        span { 
+                            font-size: 10px; line-height: 2;
+                            margin-left: 2.5px !important;
+                        }
+                        .form-range {
+                            width: 70%; height: 25px; cursor: pointer;
+                            margin-right: 5px !important;                                             
+                        }
+                        &:last-child { 
+                            margin-bottom: 0; padding: 5px 0;
+                            border-top: 2px dotted $oxfordBlue; 
+                        }
+                    }
+                    .bs-color { /* Input Color Div */
+                        label { 
+                            width: auto; margin-right: 10px;
+                        }
+                        input[type = color] {                       
+                            width: 50px; height: 25px;
+                            appearance: none; -webkit-appearance: none; -moz-appearance: none;
+                            border: 0; background: transparent;
+                            cursor: pointer; transition: 0.25s;
+                            &:hover { scale: 1.05; }
+                            &::-webkit-color-swatch {
+                                border-radius: 10px; border: 1px solid white;
+                            }
+                            &::-moz-color-swatch {
+                                border-radius: 10px; border: 1px solid white;
+                            }
+                        }
+                    }
+                }
+            }              
+            .shadow-preview {            
+                width: 100%; height: 100px; position: relative;
+                background-color: $naplesYellow; border: 2px solid $oxfordBlue; border-radius: 5px;
+                margin: auto; z-index: 5;
+                span {
+                    font-size: 30px; font-weight: bolder; letter-spacing: 1px; text-transform: uppercase;
+                    user-select: none; 
+                }               
+            }       
+            #generate-code { 
+                width: 100%;
+                font-size: 14px; margin-top: 5px;
+                background-color: $Charcoal;
+                &:hover { background-color: #000000; }
+            }          
+        }
+
+        .shadow-result { 
+            width: 500px; height: fit-content;
+            .shadow-res {
+                margin: 5px 0;
+                background-color: $naplesYellow; border: 2px solid $oxfordBlue; border-radius: 5px;
+                span {
+                    width: 100%; display: inline-block; position: relative; z-index: 5;
+                    padding: 1em; user-select: none;
+                    text-align: center; font-size: 30px; font-weight: bolder; letter-spacing: 2px; text-transform: uppercase;                    
+                }
+            }
+            small {
+                font-size: 10px; letter-spacing: 1px;
+                opacity: .75; cursor: default; user-select: none;
+            }          
+            .lines { 
+                min-height: 0px; 
+                padding: 0 5px; margin: 0 0 5px 0; border-radius: 5px;
+                font-size: 13px; color: white;
+                background-color: $Charcoal; border: 1px solid $oxfordBlue;
+                p { 
+                    padding: 0; margin: 0; padding: 5px 0; 
+                    cursor: default; border-bottom: 2px dotted $oxfordBlue;
+                    &:last-child { border-bottom: 0; }
+                    button {
+                        width: 20px; height: 20px;
+                        font-size: 8px; line-height: 0;
+                        padding: 0; float: right;
+                        &::before { content: "\f00d"; font-family: FontAwesome; }
+
+                    }
+                }               
+            }
+            .shadow-code {
+                display: flex; align-items: center;
+                margin: 5px 0; 
+                .form-floating {
+                    width: 100%;
+                    textarea {
+                        height: 100px;
+                        border: 2px solid $oxfordBlue; border-radius: 5px; cursor: copy;
+                        font-size: 14px; color: $oxfordBlue;      
+                        &::selection { background-color: $naplesYellow; }                  
+                    } 
+                    label { font-size: 14px; }
+                }
+                button {
+                    background-color: $redCrayola;
+                    margin-left: 5px; transition: 0.25s;
+                    &:hover { 
+                        background-color: var(--bs-btn-hover-bg); scale: 1.05;
+                    }
+                }
+            }
+        }
+    }
+}
