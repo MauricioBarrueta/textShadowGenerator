@@ -35,7 +35,7 @@ body {
         min-height: 90vh; gap: 25px;
 
         .card-container, .shadow-result { 
-            width: auto; max-width: 500px; height: auto; min-height: 350px;
+            width: auto; max-width: 500px; height: auto; min-height: 370px;
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
             background-color: $teaGreen; text-align: center;  
 
@@ -113,7 +113,7 @@ body {
             }       
             #generate-code { 
                 width: 100%;
-                font-size: 14px; margin-top: 5px;
+                font-size: 16px; margin-top: 5px;
                 background-color: $Charcoal;
                 &:hover { background-color: #000000; }
             }          
@@ -125,18 +125,18 @@ body {
                 margin: 5px 0;
                 background-color: $naplesYellow; border: 2px solid $oxfordBlue; border-radius: 5px;
                 span {
-                    width: 100%; display: inline-block; position: relative; z-index: 5;
-                    padding: 1em; user-select: none;
+                    width: 100%; height: 125px; display: inline-block; position: relative; z-index: 5;
+                    padding: 1em; user-select: none; line-height: 2;
                     text-align: center; font-size: 30px; font-weight: bolder; letter-spacing: 2px; text-transform: uppercase;                    
                 }
             }
             small {
-                font-size: 10px; letter-spacing: 1px;
+                font-size: 12px; letter-spacing: 1px;
                 opacity: .75; cursor: default; user-select: none;
             }          
             .lines { 
                 min-height: 0px; 
-                padding: 0 5px; margin: 0 0 5px 0; border-radius: 5px;
+                padding: 0 5px; margin: 0 0 10px 0; border-radius: 5px;
                 font-size: 13px; color: white;
                 background-color: $Charcoal; border: 1px solid $oxfordBlue;
                 p { 
