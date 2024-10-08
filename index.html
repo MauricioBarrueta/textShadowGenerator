@@ -60,19 +60,21 @@
                     </div>                  
                 </div>            
             </div>  
-
+            <div class="reset-container"><button class="btn btn-dark reset-btn" onclick="resetInputValues()">Restablecer valores &nbsp;&#xf2f9;</button></div>
             <div class="shadow-preview"><span>Vista previa</span></div>
+
+            <span class="title">2. Genera el código para agregarlo a la lista:</span>
             <button class="btn btn-dark" type="button" id="generate-code">Generar el código</button> 
         </div>
 
         <div class="shadow-result">
-            <span class="title">2. Verifica el resultado final de los estilos que agregaste:</span>
-            <div class="shadow-res"><span>Resultado final</span></div>
-
-            <small>Acá se muestran todos los estilos agregados:</small>
-            <div class="lines"></div>            
-
-            <span class="title">3. Copia el código CSS dando clic en el botón:</span>
+            <span class="title">3. Verifica el resultado final de los estilos que agregaste:</span>
+            <div class="shadow-res"><span>Resultado final</span></div>            
+            <small>Acá se muestran todos los estilos agregados: 
+                <button class="btn reset-btn" title="Vaciar lista" onclick="resetInputValues()">&#xf2ed;</button>
+            </small>
+            <div class="lines"></div> 
+            <span class="title">4. Copia el código CSS dando clic en el botón:</span>
             <div class="shadow-code">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="CSS-code" readonly></textarea>

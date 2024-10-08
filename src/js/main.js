@@ -1,6 +1,5 @@
-const horizontalShadow = document.getElementById('hRange'), verticalShadow = document.getElementById('vRange'),
-    blurRange = document.getElementById('blurRange'), shadowOpacity = document.getElementById('opaRange'),
-    textColor = document.getElementById('text-color'), shadowColor = document.getElementById('shadow-color'),
+const horizontalShadow = document.getElementById('hRange'), verticalShadow = document.getElementById('vRange'), blurRange = document.getElementById('blurRange'), 
+    shadowOpacity = document.getElementById('opaRange'), textColor = document.getElementById('text-color'), shadowColor = document.getElementById('shadow-color'),
     blurRadius = document.getElementById('blurRadius'), opacityRange = document.getElementById('opacity')
 
 window.onload = () => {
@@ -15,25 +14,24 @@ propertiesInput.forEach(input => {
 });
 
 const textShadowCode = document.getElementById('CSS-code'), stylePreview = document.querySelector('.shadow-preview span')
-let code = ''
 const generateCodeBtn = document.getElementById('generate-code'), codeLines = document.querySelector('.lines'), 
     textShadowResult = document.querySelector('.shadow-res span')
+let code = ''
 
 /* Agrega el estilo a la lista */
 generateCodeBtn.addEventListener('click', () => {
     const line = document.createElement('p')
     line.classList.add('line')
-    codeLines.appendChild(line)
-    codeLines.childElementCount === 1 ? line.textContent = `${code}` : line.textContent = `, ${code}`
-
+    codeLines.appendChild(line)   
+    codeLines.childElementCount > 1 ? line.textContent = `, ${code}` : line.textContent = `${code}`
     const deleteButton = document.createElement('button')
     deleteButton.classList.add('btn'), deleteButton.classList.add('btn-danger'), deleteButton.classList.add('remove-line')
     line.append(deleteButton)  
 
-    /* Borra el elemento padre del botón que se haya seleccionado */ 
+    /* Borra el elemento padre (estilo) del botón que se haya seleccionado */ 
     deleteButton.onclick = () => {
         deleteButton.parentNode.remove()  
-        getTextContentToFormat()
+        getTextContentToFormat()             
     }
     getTextContentToFormat()
     textShadowResult.style.color = `${textColor.value}`
@@ -43,7 +41,7 @@ generateCodeBtn.addEventListener('click', () => {
 const getTextContentToFormat = () => {
     const getLines = document.querySelectorAll('.lines')
     getLines.forEach(element => {        
-        let finalCode = element.textContent[0] == ',' ? element.textContent.slice(1) : element.textContent
+        let finalCode = element.textContent[0] == ',' ? element.textContent.slice(1) : element.textContent //* Omite la coma ',' si el primer valor inicia con esta
         textShadowCode.value = `text-shadow: ${finalCode};`
         textShadowResult.style.textShadow = finalCode
     });
@@ -59,9 +57,7 @@ const generateTextShadow = () => {
 
 /* Transforma el color hexadecimal al modelo RGB */
 const hexColorToRgba = (color, opacity) => {
-    const r = parseInt(color.substr(1, 2), 16)
-    const g = parseInt(color.substr(3, 2), 16)
-    const b = parseInt(color.substr(5, 2), 16)
+    const r = parseInt(color.substr(1, 2), 16), g = parseInt(color.substr(3, 2), 16), b = parseInt(color.substr(5, 2), 16)
     return `rgba(${r}, ${g}, ${b}, ${opacity})`
 }
 
@@ -69,7 +65,8 @@ const resetInputValues = () => {
     propertiesInput.forEach(element => { element.value = 3 });
     blurRadius.value = blurRange.value = shadowOpacity.value = opacityRange.value = 1    
     textColor.value = '#FFFFFF', shadowColor.value = '#000000'
-    textShadowCode.value = ''
+    textShadowCode.value = '', codeLines.innerHTML = '', code = '', textShadowResult.style.textShadow = 'none'
+    generateTextShadow()
 }
 
 const copyCodeBtn = document.querySelector('.copy-btn')
