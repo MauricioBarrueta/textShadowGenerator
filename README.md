@@ -6,4 +6,4 @@ genera el código CSS para poder copiarlo.
 unlimited number of styles to a single text, which can be deleted at any time even if they have already been applied to the final result, at the same time the CSS code is generated. 
 
 
-![textShadowGenerator](https://github.com/user-attachments/assets/dbf363bd-f711-415c-8f4f-4738adbce3b5)
+![textShadow](https://github.com/user-attachments/assets/8c5a050f-043d-4b0c-93cf-43f4b9f5dbc5)
