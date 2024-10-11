@@ -125,7 +125,7 @@ body {
                 background-color: $Charcoal; border: 1px solid $oxfordBlue;
                 p:nth-child(odd) { background-color: #657383; } p:nth-child(even) { border: 1px solid #657383; }
                 p {  
-                    width: 50%; 
+                    width: 50%; font-size: 12px;
                     margin: 5px 0; padding: 5px; border-radius: 5px;
                     button {
                         width: 20px; height: 20px;
