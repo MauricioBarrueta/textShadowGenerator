@@ -5,4 +5,5 @@ genera el código CSS para poder copiarlo.
 🇺🇸 This website allows you to customize the values ​​of the CSS 'text-shadow' property, the user manipulates the values while the preview is displayed, it's possible to add an 
 unlimited number of styles to a single text, which can be deleted at any time even if they have already been applied to the final result, at the same time the CSS code is generated. 
 
-![textShadow](https://github.com/MauricioBarrueta/textShadowGenerator/assets/60496232/02b7c516-01ae-44e8-adba-c1e1b3e26e08)
+
+![textShadow](https://github.com/user-attachments/assets/8c5a050f-043d-4b0c-93cf-43f4b9f5dbc5)
