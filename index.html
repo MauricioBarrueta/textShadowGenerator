@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     <link rel="stylesheet" href="src/scss/styles.css">
     <title>Style Generator: text-shadow</title>
     <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
@@ -16,76 +16,91 @@
         <a class="active">Text Shadow</a>
         <a href="https://mauriciobarrueta.github.io/borderGenerator/">Border</a>
         <a href="https://mauriciobarrueta.github.io/borderRadiusGenerator/">Border Radius</a>
-        <a href="https://mauriciobarrueta.github.io/transformGenerator/">CSS Transform</a>
-        <a href="https://mauriciobarrueta.github.io/filterGenerator/">Image Filter</a>
-        <a href="https://mauriciobarrueta.github.io/gradientBgGenerator/">CSS Gradient</a>
-        <a href="https://mauriciobarrueta.github.io/rgbaHexGenerator/">Color Picker</a>
+        <a href="https://mauriciobarrueta.github.io/transformGenerator/">Transform</a>
+        <a href="https://mauriciobarrueta.github.io/filterGenerator/">Filter</a>
+        <a href="https://mauriciobarrueta.github.io/gradientBgGenerator/">Gradient</a>
+        <a href="https://mauriciobarrueta.github.io/rgbaHexGenerator/">Color</a>
         <a href="https://mauriciobarrueta.github.io/glassmorphismGenerator/">Glassmorphism</a>
       </nav>
 
     <div class="container">
         <div class="card-container">
-            <span class="title">1. Personaliza los valores de la propiedad 'text-shadow':</span>
+            <span class="title">1. Personaliza los valores de la propiedad text-shadow:</span>
             <div class="shadow-properties">
                 <div class="column">
                     <div class="input-group">
-                        <label for="hShadow" class="form-label">Horizontal Shadow:</label>
-                        <input type="range" class="form-range" min="-200" max="200" step="1" value="5" id="hShadow" oninput="hRange.value=hShadow.value">
-                        <input type="number" id="hRange" min="-200" max="200" value="5" oninput="hShadow.value=hRange.value"><span>px</span>
+                        <label for="hShadow" class="form-label">offset-x</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="-200" max="200" step="1" value="5" id="hShadow" oninput="hRange.value=hShadow.value">
+                            <input type="number" id="hRange" min="-200" max="200" value="5" oninput="hShadow.value=hRange.value"><span>px</span>
+                        </div>                        
                     </div>                
                     <div class="input-group">
-                        <label for="blur" class="form-label">Blur Radius:</label>
-                        <input type="range" class="form-range" min="0" max="50" step="1" value="2" id="blurRadius" oninput="blurRange.value=blurRadius.value">
-                        <input type="number" id="blurRange" min="0" max="50" value="2" oninput="blurRadius.value=blurRange.value"><span>px</span>
+                        <label for="blur" class="form-label">blur-radius</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="50" step="1" value="2" id="blurRadius" oninput="blurRange.value=blurRadius.value">
+                            <input type="number" id="blurRange" min="0" max="50" value="2" oninput="blurRadius.value=blurRange.value"><span>px</span>
+                        </div>                        
                     </div>
                     <div class="input-group bs-color">
-                        <label class="form-label" for="text-color">Text Color:</label>
+                        <label class="form-label" for="text-color">color</label>
                         <input type="color" id="text-color" value="#FFFFFF">
+                        <small title="Texto">&#xf05a;</small>
                     </div>                 
                 </div>
                 <div class="column">
                     <div class="input-group">
-                        <label for="vShadow" class="form-label">Vertical Shadow:</label>
-                        <input type="range" class="form-range" min="-200" max="200" step="1" value="5" id="vShadow" oninput="vRange.value=vShadow.value">
-                        <input type="number" id="vRange" min="-200" max="200" value="5" oninput="vShadow.value=vRange.value"><span>px</span>
+                        <label for="vShadow" class="form-label">offset-y</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="-200" max="200" step="1" value="5" id="vShadow" oninput="vRange.value=vShadow.value">
+                            <input type="number" id="vRange" min="-200" max="200" value="5" oninput="vShadow.value=vRange.value"><span>px</span>
+                        </div>                        
                     </div>     
                     <div class="input-group">
-                        <label for="opacity" class="form-label">Shadow Opacity:</label>
-                        <input type="range" class="form-range" min="0" max="1" step="0.05" value="0.75" id="opacity" oninput="opaRange.value=opacity.value">
-                        <input type="number" id="opaRange" min="0" max="1" step="0.05" value="0.75" oninput="opacity.value=opaRange.value"><span>no.</span>
+                        <label for="opacity" class="form-label">opacity</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="1" step="0.05" value="0.75" id="opacity" oninput="opaRange.value=opacity.value">
+                            <input type="number" id="opaRange" min="0" max="1" step="0.05" value="0.75" oninput="opacity.value=opaRange.value"><span>num.</span>
+                        </div>                        
                     </div>           
                     <div class="input-group bs-color">
-                        <label class="form-label" for="shadow-color">Shadow Color:</label>
+                        <label class="form-label" for="shadow-color">color</label>
                         <input type="color" id="shadow-color">
+                        <small title="Sombra">&#xf05a;</small>
                     </div>                  
                 </div>            
             </div>  
-            <div class="reset-container"><button class="btn btn-dark reset-btn" onclick="resetInputValues()">Restablecer valores &nbsp;&#xf2f9;</button></div>
+            <div class="reset-container"><button class="btn btn-dark reset-btn" onclick="resetInputValues()">
+                Restablecer valores &nbsp;<i class="fa-solid fa-arrow-rotate-right"></i>
+            </button>
+            </div>
             <div class="shadow-preview"><span>Vista previa</span></div>
 
             <span class="title">2. Genera el código para agregarlo a la lista:</span>
-            <button class="btn btn-dark" type="button" id="generate-code">Generar el código</button> 
+            <button class="btn btn-dark" type="button" id="generate-code">Generar código &nbsp;<i class="fa-solid fa-code"></i></button> 
         </div>
 
         <div class="shadow-result">
-            <span class="title">3. Verifica el resultado final de los estilos que agregaste:</span>
+            <span class="title">3. Verifica el resultado final de los estilos:</span>
             <div class="shadow-res"><span>Resultado final</span></div>            
-            <small>Acá se muestran todos los estilos agregados: 
+            <small>Lista de estilos agregados: 
                 <button class="btn reset-btn" title="Vaciar lista" onclick="resetInputValues()">&#xf2ed;</button>
             </small>
+
             <div class="lines"></div> 
-            <span class="title">4. Copia el código CSS dando clic en el botón:</span>
+
+            <span class="title">4. Copia el código CSS:</span>
             <div class="shadow-code">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="CSS-code" readonly></textarea>
                     <label for="CSS-code">El código CSS se genera automáticamente:</label>
                 </div>
-                <button class="btn btn-danger copy-btn" title="Copiar código">&#xf0c5;</button>
+                <button class="btn btn-danger copy-btn" title="Copiar">&#xf0c5;</button>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
     <script src="src/js/main.js"></script>
 </body>
 </html>
