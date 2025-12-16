@@ -112,10 +112,10 @@ body {
         }
 
         .shadow-result { 
-            height: auto; max-height: 485px; flex: 1;
-            overflow: auto; align-content: center;
+            height: 100%; max-height: 485px;
+            overflow: auto; 
             .shadow-res {
-                position: sticky; top: 0; height: 150px; display: flex; align-items: center;
+                position: sticky; top: -16px; height: 150px; display: flex; align-items: center;
                 margin: 5px 0; z-index: 2; border: 2px solid $oxfordBlue; border-radius: 5px;
                 background-color: $naplesYellow; 
                 span {
@@ -126,22 +126,22 @@ body {
 
             small {
                 width: 100%; display: inline-block; position: relative;
-                font-size: 12px; letter-spacing: 1px;
-                opacity: .75; cursor: default; user-select: none; z-index: 0;
+                font-size: 11px; letter-spacing: 2px;
+                opacity: .7; cursor: default; margin-bottom: 5px; user-select: none; z-index: 0;
                 .reset-btn {
                     position: absolute; top: -5px; right: 0; padding: 5px;
-                    font-size: 10px;
+                    font-size: 11px;
                     &:hover { color: $redCrayola; }
                 }
             }     
 
             .lines { 
-                justify-content: space-around; min-height: 0px; 
+                justify-content: space-between !important; 
                 padding: 0 5px; margin: 0 0 10px 0; border-radius: 5px;
-                background-color: $Charcoal; color: #FFF; border: 1px solid $oxfordBlue;
+                background-color: $Charcoal; color: #FFF; border-top: 1px solid $Charcoal;
                 p:nth-child(odd) { background-color: #657383; } p:nth-child(even) { border: 1px solid #657383; }
                 p {  
-                    width: 48%; font-size: 12px;
+                    width: 49%; font-size: 12px;
                     margin: 5px 0; padding: 5px; border-radius: 5px;
                     button {
                         width: 20px; height: 20px;
