@@ -219,15 +219,13 @@ body .container .card-container #generate-code i, body .container .shadow-result
   font-size: 12px;
 }
 body .container .shadow-result {
-  height: auto;
+  height: 100%;
   max-height: 485px;
-  flex: 1;
   overflow: auto;
-  align-content: center;
 }
 body .container .shadow-result .shadow-res {
   position: sticky;
-  top: 0;
+  top: -16px;
   height: 150px;
   display: flex;
   align-items: center;
@@ -252,10 +250,11 @@ body .container .shadow-result small {
   width: 100%;
   display: inline-block;
   position: relative;
-  font-size: 12px;
-  letter-spacing: 1px;
-  opacity: 0.75;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.7;
   cursor: default;
+  margin-bottom: 5px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -266,20 +265,19 @@ body .container .shadow-result small .reset-btn {
   top: -5px;
   right: 0;
   padding: 5px;
-  font-size: 10px;
+  font-size: 11px;
 }
 body .container .shadow-result small .reset-btn:hover {
   color: #ED254E;
 }
 body .container .shadow-result .lines {
-  justify-content: space-around;
-  min-height: 0px;
+  justify-content: space-between !important;
   padding: 0 5px;
   margin: 0 0 10px 0;
   border-radius: 5px;
   background-color: #465362;
   color: #FFF;
-  border: 1px solid #011936;
+  border-top: 1px solid #465362;
 }
 body .container .shadow-result .lines p:nth-child(odd) {
   background-color: #657383;
@@ -288,7 +286,7 @@ body .container .shadow-result .lines p:nth-child(even) {
   border: 1px solid #657383;
 }
 body .container .shadow-result .lines p {
-  width: 48%;
+  width: 49%;
   font-size: 12px;
   margin: 5px 0;
   padding: 5px;

@@ -22,29 +22,41 @@ let code = ''
 generateCodeBtn.addEventListener('click', () => {
     const line = document.createElement('p')
     line.classList.add('line')
-    codeLines.appendChild(line)   
-    codeLines.childElementCount > 1 ? line.textContent = `, ${code}` : line.textContent = `${code}`
-    const deleteButton = document.createElement('button')
-    deleteButton.classList.add('btn'), deleteButton.classList.add('btn-danger'), deleteButton.classList.add('remove-line')
-    line.append(deleteButton)  
+    //* Se guarda los valores de la propiedad (string) en el atributo data-value del elemento
+    line.dataset.value = code
+    line.textContent = code
 
-    /* Borra el elemento padre (estilo) del botón que se haya seleccionado */ 
+    const deleteButton = document.createElement('button')
+    deleteButton.classList.add('btn', 'btn-danger', 'remove-line')
+    line.append(deleteButton)
+
+    codeLines.appendChild(line)
+
     deleteButton.onclick = () => {
-        deleteButton.parentNode.remove()  
-        getTextContentToFormat()             
+        line.remove()
+        getTextContentToFormat()
     }
+
     getTextContentToFormat()
-    textShadowResult.style.color = `${textColor.value}`
+    textShadowResult.style.color = textColor.value
 })
 
 /* Obtiene el contenido de todos los elementos hijos y los pasa al textarea */
 const getTextContentToFormat = () => {
-    const getLines = document.querySelectorAll('.lines')
-    getLines.forEach(element => {        
-        let finalCode = element.textContent[0] == ',' ? element.textContent.slice(1) : element.textContent //* Omite la coma ',' si el primer valor inicia con esta
-        textShadowCode.value = `text-shadow: ${finalCode};`
-        textShadowResult.style.textShadow = finalCode
-    });
+    const lines = document.querySelectorAll('.line')
+    //* Convierte el NodeList a un array de strings y extrae el valor del atributo data-value de cada uno
+    const values = [...lines].map(line => line.dataset.value)
+
+    if (values.length === 0) {
+        textShadowCode.value = ''
+        textShadowResult.style.textShadow = 'none'
+        return
+    }
+
+    /* Se agrega una coma ',' entre cada valor del array */
+    const finalCode = values.join(', ')
+    textShadowCode.value = `text-shadow: ${finalCode};`
+    textShadowResult.style.textShadow = finalCode
 }
 
 /* Genera la sintaxis del código de acuerdo a los valores junto con la vista previa del estilo actual y el resultado final */
