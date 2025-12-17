@@ -4,4 +4,5 @@
 
 🔗 https://mauriciobarrueta.github.io/textShadowGenerator/
 
-![text-shadow](https://github.com/user-attachments/assets/18a452ed-9dc3-4b43-92e8-f07651a664c9)
+
+<img width="1366" height="653" alt="text-shadow" src="https://github.com/user-attachments/assets/58666a6a-7287-4abb-a639-fb91a0f5f8f6" />
